@@ -1,0 +1,15 @@
+<h1>Détails d'une liste</h1>
+
+<h2><%= @list.name %></h2>
+
+<%= link_to lists_path do %>
+  <button class="btn btn-warning">Retour</button>
+<% end %>
+
+  <% @list.bookmarks.each do |bookmark| %>
+    <div>
+      <p><%= bookmark.movie.title %></p>
+      <p><%= bookmark.comment %></p>
+    </div>
+    <br>
+  <% end %>
