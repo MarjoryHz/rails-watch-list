@@ -14,7 +14,8 @@ Rails.application.routes.draw do
   # get "bookmark", to: "bookmarks#bookmark"
   # get "lists", to: "lists#index"
   # get "lists/:id", to: "lists#show"
-  resources :lists, only: %i[show index] do
+  resources :lists, only: %i[show index new create] do
     resources :bookmarks, only: %i[new create]
   end
+  resources :bookmarks, only: %i[destroy]
 end
